@@ -1,0 +1,51 @@
+<html>
+<head><link rel="stylesheet" type="text/css" href="./default.css"></head>
+<body>
+<br>
+<h2>Arduino UNO Based Kitchen Timer</h2><br>
+<p>A <font color="red">Arduino</font> project</p>
+<p><b>
+Arduino based kitchen timer seconds count down from multiples of minutes, buzzer notification when count down reaches zero.
+</b></p>
+<br><img src="uno_timer_p0.jpg"><br><br>
+<br>
+<h3>Description</h3><br>
+<p>The Arduino UNO is a microcontroller development board based on a 8 bit AVR mircocontroller. The development platform used is the Arduino IDE and there are a large number of open source libraries available, this makes it idea to experiment with common electronic components and to create simple electronic projects quickly.</p>
+<br>
+<h3>Functions, Features and Usage</h3><br>
+<P>The timer can perform count-downs from 1 to 99 minutes in 1 minute intervals. Upon powering up, "01 --" is shown. This indicates the initial setting of counting down from 1 minute. Pressing the single button will advance the count minutes by one minute and the LED display will be updated.</p>
+<br><img src="uno_timer_p2.jpg"><br><br>
+<br>
+<p>To activate the count-down, a long press (press and hold) on the button is required. The LED display will change and begin to display the count-down in minutes and seconds. When the count-down reaches zero, the buzzer will sound and the display changes to alternating dashes.</p>
+<br><img src="uno_timer_p1.jpg"><br><br>
+
+<h3>Parts / Bill of Material</h3><br>
+<br><img src="uno_timer_p3.jpg"><br><br>
+<br><br>
+<ul>
+<li>An Arduino UNO microcontroller development board</li>
+<li>A 3461BS 7 segment 4 digit LED module</li>
+<li>1 tactile button, 6 x 6 2 pin type</li>
+<li>1 mini breadboard, 170 points</li>
+<li>1 5V buzzer, 170 points</li>
+<li>About 1 foot of breadboard wire (swg 22)</li>
+</ul>
+</>
+</>
+<p>The only tool that you may need is a pair of wire cutter / strippers</p>
+<h3>Schematic, Source Code and Build Hints</h3><br>
+<br><img src="uno_timer_schem.png"><br><br>
+<p>Timing are done via the millis() function of the Arduino core library. Count-down timer vairable decreases every second. When the timer variable reaches zero, buzzer is activated and will only be silenced upon a keypress on the tactile button.</p>
+<br>
+<p>The 4 digits 7 segment LED module provides display capability. It is a passive device. A multiplexing library is used to show the count-down values. 12 IO pins are used for multiplexing, 4 of which controls the digits and the rest take care of the 7 segments + decimal point.</p>
+<br>
+<p>A single tactile button is also wired to accept user input.</p>
+<br><img src="uno_timer_bb.png"><br><br>
+<p>For construction on a 170 point mini breadboard and Arduino wire mapping, use the above wiring layout.</p>
+
+<p>
+<a href="https://github.com/carita-chung/uno_timer/">Arduino source code for this project is here</a></p>
+<br><br><br><br>
+</body>
+</html>
+
